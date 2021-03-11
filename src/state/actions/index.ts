@@ -14,7 +14,7 @@ interface SearchRepositoriesErrorAction {
   payload: string;
 }
 
-export type Action = 
+export type Action =
   | SearchRepositoriesAction
   | SearchRepositoriesSuccessAction
-  | SearchRepositoriesErrorAction
+  | SearchRepositoriesErrorAction;

@@ -1,19 +1,22 @@
-import React from "react";
-import {ActionType} from "../action-types";
-import {Action} from "../actions"
+import { ActionType } from "../action-types";
+import { Action } from "../actions";
 
-/* A URL you're going to make requests to
-https://registry.npmjs.org/-/v1/search?text=react*/
 interface RepositoriesState {
   loading: boolean;
   error: string | null;
   data: string[];
 }
+
+const initialState = {
+  loading: false,
+  error: null,
+  data: []
+}
+
 const reducer = (
-  state: RepositoriesState,
+  state: RepositoriesState = initialState,
   action: Action
 ): RepositoriesState => {
-  
   switch (action.type) {
     case ActionType.SEARCH_REPOSITORIES:
       return { loading: true, error: null, data: [] };
@@ -25,5 +28,4 @@ const reducer = (
     default:
       return state;
   }
-};
-export default reducer;
+};export default reducer;
